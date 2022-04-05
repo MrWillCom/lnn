@@ -1,0 +1,10 @@
+{
+    "name": "@mrwillcom/lnn",
+    "description": "Yet another `lsnotes` built with Node.js.",
+    "version": "0.0.0",
+    "license": "MIT",
+    "type": "module",
+    "bin": {
+        "lnn": "./src/main.js"
+    }
+}
