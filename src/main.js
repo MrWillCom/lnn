@@ -1,8 +1,6 @@
 #!/usr/bin/env node
 
 import fs from 'node:fs'
-import child_process from 'node:child_process'
-import os from 'node:os'
 import minimist from 'minimist'
 import chalk from 'chalk'
 
@@ -23,7 +21,9 @@ if (argv.s === true || argv.separator === true) {
 }
 
 if (argv.l === true || argv.ls === true) {
-    const ls = os.platform() === 'win32' ? 'dir' : 'ls'
+    const dir = fs.readdirSync('./')
 
-    console.log(child_process.execSync(ls).toString())
+    for (const i in dir) {
+        console.log(dir[i])
+    }
 }
