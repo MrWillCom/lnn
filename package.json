@@ -1,15 +1,37 @@
 {
     "name": "@mrwillcom/lnn",
     "description": "Yet another `lsnotes` built with Node.js.",
-    "version": "0.0.0",
+    "version": "0.1.0-beta.0",
     "license": "MIT",
     "type": "module",
     "bin": {
         "lnn": "./src/main.js"
     },
+    "pkg": {
+        "scripts": "src/**/*.js",
+        "bin": "src",
+        "targets": [
+            "node16-alpine-arm64",
+            "node16-alpine-x64",
+            "node16-linux-arm64",
+            "node16-linux-x64",
+            "node16-linuxstatic-arm64",
+            "node16-linuxstatic-x64",
+            "node16-macos-arm64",
+            "node16-macos-x64",
+            "node16-win-arm64",
+            "node16-win-x64"
+        ],
+        "outputPath": "dist"
+    },
+    "scripts": {
+        "start": "node ./src/main.js",
+        "build": "pkg . --no-bytecode --public-packages \"*\" --public --compress GZip"
+    },
     "dependencies": {
         "chalk": "^5.0.1",
         "minimist": "^1.2.6",
+        "pkg": "^5.6.0",
         "yaml-front-matter": "^4.1.1"
     }
 }
