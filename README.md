@@ -2,14 +2,14 @@
 
 Yet another [`lsnotes`](https://github.com/aeilot/lsnotes) built with Node.js.
 
-(Check out [`lsnotes`](https://github.com/aeilot/lsnotes) by @aeilot! It's the original project.)
+(Check out [`lsnotes`](https://github.com/aeilot/lsnotes) by [@aeilot](https://github.com/aeilot)! It's the original project.)
 
 ## Getting Started
 
 ```sh
-$ yarn global add @mrwillcom/lnn
+$ yarn global add lnn-cli
 # or
-$ npm install -g @mrwillcom/lnn
+$ npm install -g lnn-cli
 ```
 
 Then, you can use `lnn` to print `.lsnotes` in current directory to terminal:
@@ -31,7 +31,7 @@ $ ls
 
 The home directory of project `lnn`.
 
-------------------------------------------------------------------------------------------------------------------------
+----------
 
 .git
 .gitignore
