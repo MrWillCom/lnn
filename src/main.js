@@ -14,7 +14,7 @@ const main = () => {
         return
     }
 
-    var notes
+    var notes = {}
 
     // output `.lsnotes`
     try {
@@ -22,7 +22,7 @@ const main = () => {
         console.log(notes.__content)
     } catch (err) {
         if (err.code === 'ENOENT') {
-            console.log(chalk.grey('No .lsnotes.'))
+            console.log(chalk.grey('\nNo .lsnotes.\n'))
         }
     }
 
@@ -40,7 +40,15 @@ const main = () => {
         var output = ''
 
         for (const i in dir) {
-            output += dir[i]
+            try {
+                if (fs.statSync(dir[i]).isDirectory()) {
+                    output += chalk.blue(dir[i])
+                } else {
+                    output += dir[i]
+                }
+            } catch (err) {
+                output += dir[i]
+            }
             for (const j in notes['files']) {
                 if (j === dir[i]) {
                     output += chalk.dim(' - ')
